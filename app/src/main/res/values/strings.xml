@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">HyperCast Android</string>
     <string name="title_olsocket_detail">OL_Socket Detail</string>
+    <string name="message_box_hint">Enter the message</string>
+    <string name="send_button_text">Send</string>
+    <string name="start_button_text">Create/Join</string>
+    <string name="stop_button_text">Stop</string>
 </resources>

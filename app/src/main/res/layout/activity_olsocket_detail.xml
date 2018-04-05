@@ -35,62 +35,76 @@
     </android.support.design.widget.AppBarLayout>
 
 
-    <android.support.v4.widget.NestedScrollView
-        android:id="@+id/olsocket_detail_container"
-        android:layout_width="match_parent"
-        android:layout_height="260dp"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        />
-
-
     <RelativeLayout
+        android:id="@+id/relative_layout"
         android:layout_width="fill_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v4.widget.NestedScrollView
+            android:id="@+id/olsocket_detail_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/send_layout"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
 
         <LinearLayout
-            android:id="@+id/LinearLayout01"
+            android:id="@+id/send_layout"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_above="@+id/LinearLayout02">
+            android:layout_above="@+id/footer"
+            android:layout_marginBottom="10dp">
 
             <EditText
-                android:id="@+id/editPort"
-                android:layout_width="285dp"
+                android:id="@+id/message_input"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:hint="Message">
+                android:inputType="text"
+                android:maxLines="1"
+                android:hint="@string/message_box_hint"
+                android:layout_weight="1">
 
             </EditText>
 
             <Button
+                android:id="@+id/send_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Send">
+                android:text="@string/send_button_text">
             </Button>
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/LinearLayout02"
+            android:id="@+id/footer"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_gravity="bottom">
+            android:layout_gravity="bottom"
+            android:orientation="horizontal">
 
             <Button
-                android:id="@+id/Button02"
+                style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/create_join_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Start">
+                android:text="@string/start_button_text"
+                android:textColor="@color/black">
             </Button>
 
             <Button
-                android:id="@+id/Button03"
+                style="?android:attr/buttonBarButtonStyle"
+                android:id="@+id/stop_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="Stop">
+                android:text="@string/stop_button_text"
+                android:textColor="@color/black">
             </Button>
         </LinearLayout>
+
     </RelativeLayout>
 
     <android.support.design.widget.FloatingActionButton
