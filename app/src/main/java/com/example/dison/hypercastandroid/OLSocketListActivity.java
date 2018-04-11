@@ -15,7 +15,7 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 
-import com.example.dison.hypercastandroid.dummy.DummyContent;
+import com.example.dison.hypercastandroid.OLSocket.OLSocketContent;
 
 import java.util.List;
 
@@ -48,11 +48,13 @@ public class OLSocketListActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //TODO: Start a new OLSocketDetailAcitivity for creating new OL socket
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });
 
+        //TODO: Don't worry about this now since we are running it on Android phone instead of tablets
         if (findViewById(R.id.olsocket_detail_container) != null) {
             // The detail container view will be present only in the
             // large-screen layouts (res/values-w900dp).
@@ -67,19 +69,19 @@ public class OLSocketListActivity extends AppCompatActivity {
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView) {
-        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(this, DummyContent.ITEMS, mTwoPane));
+        recyclerView.setAdapter(new SimpleItemRecyclerViewAdapter(this, OLSocketContent.ITEMS, mTwoPane));
     }
 
     public static class SimpleItemRecyclerViewAdapter
             extends RecyclerView.Adapter<SimpleItemRecyclerViewAdapter.ViewHolder> {
 
         private final OLSocketListActivity mParentActivity;
-        private final List<DummyContent.DummyItem> mValues;
+        private final List<OLSocketContent.OLSocketItem> mValues;
         private final boolean mTwoPane;
         private final View.OnClickListener mOnClickListener = new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                DummyContent.DummyItem item = (DummyContent.DummyItem) view.getTag();
+                OLSocketContent.OLSocketItem item = (OLSocketContent.OLSocketItem) view.getTag();
                 if (mTwoPane) {
                     Bundle arguments = new Bundle();
                     arguments.putString(OLSocketDetailFragment.ARG_ITEM_ID, item.id);
@@ -99,7 +101,7 @@ public class OLSocketListActivity extends AppCompatActivity {
         };
 
         SimpleItemRecyclerViewAdapter(OLSocketListActivity parent,
-                                      List<DummyContent.DummyItem> items,
+                                      List<OLSocketContent.OLSocketItem> items,
                                       boolean twoPane) {
             mValues = items;
             mParentActivity = parent;
