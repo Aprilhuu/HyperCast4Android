@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.dison.hypercastandroid">
+    package="com.example.april.hypercastandroid">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
 
     <application
         android:allowBackup="true"
@@ -11,6 +17,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <receiver android:name=".BTReceiver" android:exported="true">
+            <intent-filter>
+                <action android:name="com.example.dison.hypercastandroid.START_MODULE"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="com.example.dison.hypercastandroid.BLUETOOTH"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="com.example.dison.hypercastandroid.STARTED"/>
+            </intent-filter>
+
+            <intent-filter>
+                <action android:name="com.example.dison.hypercastandroid.MSG_RECEIVED"/>
+            </intent-filter>
+        </receiver>
+
         <activity
             android:name=".OLSocketListActivity"
             android:label="@string/app_name"
@@ -21,20 +46,32 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".OLSocketDetailActivity"
+            android:exported="true"
             android:label="@string/title_olsocket_detail"
             android:parentActivityName=".OLSocketListActivity"
             android:theme="@style/AppTheme.NoActionBar">
+
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.example.dison.hypercastandroid.OLSocketListActivity" />
+                android:value="com.example.april.hypercastandroid.OLSocketListActivity" />
         </activity>
 
         <service
             android:name=".HyperCastService"
             android:enabled="true"
-            android:exported="true"></service>
+            android:exported="true" />
+
+        <activity
+            android:name=".OLSocketConfig"
+            android:exported="true" />
+        <activity
+            android:name=".ListAvailableConfigs"
+            android:exported="true"
+            android:noHistory="true" />
+        <activity android:name=".OLSocketConfigBT"></activity>
     </application>
 
 </manifest>

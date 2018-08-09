@@ -8,6 +8,5 @@
     android:layout_height="match_parent"
     android:layout_marginLeft="16dp"
     android:layout_marginRight="16dp"
-    app:layoutManager="LinearLayoutManager"
-    tools:context="com.example.dison.hypercastandroid.OLSocketListActivity"
+    tools:context="com.example.april.hypercastandroid.OLSocketListActivity"
     tools:listitem="@layout/olsocket_list_content" />

@@ -1,4 +1,4 @@
-package com.example.dison.hypercastandroid;
+package com.example.april.hypercastandroid;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
