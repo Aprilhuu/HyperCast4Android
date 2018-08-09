@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".OLSocketConfigBT">
+
+    <EditText
+        android:id="@+id/BT_ModuleAddr"
+        android:layout_width="245dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@+id/save_btn_BT"
+        app:layout_constraintEnd_toEndOf="@+id/save_btn_BT"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/save_btn_BT"
+        app:layout_constraintTop_toBottomOf="@+id/BT_ModuleLabel"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/BT_ModuleLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="17dp"
+        android:layout_marginTop="12dp"
+        android:text="BT_Module Adress (IP:Port)"
+        app:layout_constraintBottom_toTopOf="@+id/BT_ModuleAddr"
+        app:layout_constraintEnd_toEndOf="@+id/BT_ModuleAddr"
+        app:layout_constraintStart_toStartOf="@+id/BT_ModuleAddr"
+        app:layout_constraintTop_toBottomOf="@+id/overlayID_BT" />
+
+    <EditText
+        android:id="@+id/overlayID_BT"
+        android:layout_width="245dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/darker_gray"
+        app:layout_constraintBottom_toTopOf="@+id/BT_ModuleLabel"
+        app:layout_constraintEnd_toEndOf="@+id/BT_ModuleLabel"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/BT_ModuleLabel"
+        app:layout_constraintTop_toBottomOf="@+id/overlayIDLabel" />
+
+    <Button
+        android:id="@+id/save_btn_BT"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_marginBottom="142dp"
+        android:text="Save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/BT_ModuleAddr" />
+
+    <TextView
+        android:id="@+id/overlayIDLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginTop="142dp"
+        android:text="Overlay ID"
+        app:layout_constraintBottom_toTopOf="@+id/overlayID_BT"
+        app:layout_constraintEnd_toEndOf="@+id/overlayID_BT"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="@+id/overlayID_BT"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

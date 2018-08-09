@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="com.example.dison.hypercastandroid.OLSocketDetailActivity"
+    tools:context="com.example.april.hypercastandroid.OLSocketDetailActivity"
     tools:ignore="MergeRootFrame">
 
     <android.support.design.widget.AppBarLayout
@@ -19,14 +19,13 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fitsSystemWindows="true"
-            app:contentScrim="?attr/colorPrimary"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
             app:toolbarId="@+id/toolbar">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/detail_toolbar"
                 android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="?android:attr/actionBarSize"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
 
@@ -47,7 +46,18 @@
             android:layout_height="match_parent"
             android:layout_above="@+id/send_layout"
             android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentStart="true" >
+
+            <TextView
+                android:id="@+id/console"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="253dp"
+                android:textSize="18sp" />
+        </android.support.v4.widget.NestedScrollView>
 
 
         <LinearLayout
@@ -61,10 +71,10 @@
                 android:id="@+id/message_input"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:maxLines="1"
+                android:layout_weight="1"
                 android:hint="@string/message_box_hint"
-                android:layout_weight="1">
+                android:inputType="text"
+                android:maxLines="1">
 
             </EditText>
 
@@ -72,8 +82,7 @@
                 android:id="@+id/send_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/send_button_text">
-            </Button>
+                android:text="@string/send_button_text"></Button>
         </LinearLayout>
 
         <LinearLayout
@@ -85,24 +94,22 @@
             android:orientation="horizontal">
 
             <Button
-                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/create_join_button"
-                android:layout_width="wrap_content"
+                style="?android:attr/buttonBarButtonStyle"
+                android:layout_width="65dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/start_button_text"
-                android:textColor="@color/black">
-            </Button>
+                android:textColor="@color/black"></Button>
 
             <Button
-                style="?android:attr/buttonBarButtonStyle"
                 android:id="@+id/stop_button"
+                style="?android:attr/buttonBarButtonStyle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/stop_button_text"
-                android:textColor="@color/black">
-            </Button>
+                android:textColor="@color/black"></Button>
         </LinearLayout>
 
     </RelativeLayout>

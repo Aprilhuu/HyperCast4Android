@@ -1,4 +1,4 @@
-package com.example.dison.hypercastandroid;
+package com.example.april.hypercastandroid;
 
 import android.app.Activity;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -8,8 +8,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
-import com.example.dison.hypercastandroid.OLSocket.OLSocketContent;
 
 /**
  * A fragment representing a single OL_Socket detail screen.
